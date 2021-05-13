@@ -1,10 +1,12 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 
+
 const db = require('../models'); //database
 
 
-const STRATEGY = new LocalStrategy({
+
+const STRATEGY = new localStrategy({
     usernameField: 'email',         // looks for an email field as the username
     passwordField: 'password'       // looks for an password field as the password
     }, async (email, password, cb) => {
@@ -47,5 +49,7 @@ passport.deserializeUser(async (id, cb) => {
 passport.use(STRATEGY);
 
 module.exports = passport;
+
+
 
 
