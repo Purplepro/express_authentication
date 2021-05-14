@@ -31,7 +31,7 @@ app.use(flash());
 app.use((req, res, next) => {
   console.log(res.locals);
   res.locals.alerts = req.flash();
-  res.locals.cureentUser = req.user;
+  res.locals.currentUser = req.user;
   next();
 });
 

@@ -56,8 +56,10 @@ user.addHook('beforeCreate', (pendingUser) => {
 })
 
 user.prototype.validPassword = function(typedPassword) {
-  let isCorrectPassword = bycrpt.compareSync(typedPassword, this.password); //
+  let isCorrectPassword = bcrypt.compareSync(typedPassword, this.password); //
   //check to see if password is correct
+
+  return isCorrectPassword;
 }
 
 user.prototype.toJSON = function() {
