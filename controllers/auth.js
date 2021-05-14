@@ -12,6 +12,7 @@ router.get('/login', (req, res) => {
   res.render('auth/login');
 });
 
+
 router.get('/logout', (req, res) => {
   req.logout();
   req.flash('success', 'See you next time...');
@@ -46,7 +47,7 @@ router.post('/signup', async (req, res) => {
       req.flash('error', 'Email already exists');
       res.redirect('/auth/signup');
     }
-        
+
   } catch (error) {
     console.log('------ Error --------');
     console.log(error);
